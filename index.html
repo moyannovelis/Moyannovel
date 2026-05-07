@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeloraNovel — WebNovel Modern</title>
+  <meta name="description" content="Template webnovel modern untuk GitHub Pages dengan desain unik, modis, dan responsif." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap glass">
+      <a href="#" class="brand">
+        <span class="brand-mark">V</span>
+        <div>
+          <strong>VeloraNovel</strong>
+          <small>Stylish WebNovel UI</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#koleksi">Koleksi</a>
+        <a href="#unggulan">Unggulan</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#reader">Reader</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Ganti tema">◐</button>
+        <button class="cta-btn">Masuk</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <span class="eyebrow">Platform WebNovel Modern</span>
+        <h1>Baca cerita favoritmu dengan <span>gaya futuristik</span> yang elegan.</h1>
+        <p>
+          Template ini dibuat untuk GitHub Pages: ringan, responsif, mudah dikustomisasi,
+          dan punya tampilan premium untuk katalog novel, halaman chapter, bookmark, serta mode gelap.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#koleksi" class="cta-btn large">Jelajahi Koleksi</a>
+          <button class="ghost-btn large" id="openFeatured">Buka Novel Unggulan</button>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card glass">
+            <strong>120K+</strong>
+            <span>Pembaca aktif</span>
+          </div>
+          <div class="stat-card glass">
+            <strong>430+</strong>
+            <span>Judul novel</span>
+          </div>
+          <div class="stat-card glass">
+            <strong>12</strong>
+            <span>Genre populer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-panel glass">
+        <div class="panel-badge">Trending #1</div>
+        <h2>Moonlit Echoes</h2>
+        <p>
+          Sebuah romansa fantasi urban dengan misteri kuno, kota neon, dan rahasia keluarga yang terpendam.
+        </p>
+
+        <div class="hero-tags">
+          <span>Fantasy</span>
+          <span>Romance</span>
+          <span>Mystery</span>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-head">
+            <span>Progress baca</span>
+            <strong>72%</strong>
+          </div>
+          <div class="progress-bar">
+            <i style="width:72%"></i>
+          </div>
+          <small>Lanjutkan dari chapter 18</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="kategori" class="container section-gap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Genre Populer</span>
+          <h2>Kategori pilihan pembaca</h2>
+        </div>
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari judul atau genre..." />
+      </div>
+      <div class="genre-pills" id="genrePills"></div>
+    </section>
+
+    <section id="unggulan" class="container section-gap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Pilihan Editor</span>
+          <h2>Novel unggulan minggu ini</h2>
+        </div>
+        <button class="ghost-btn" id="shuffleBtn">Acak Rekomendasi</button>
+      </div>
+
+      <div class="featured-grid" id="featuredGrid"></div>
+    </section>
+
+    <section id="koleksi" class="container section-gap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Perpustakaan</span>
+          <h2>Koleksi WebNovel</h2>
+        </div>
+        <select id="sortSelect" class="search-input select-like">
+          <option value="popular">Urutkan: Terpopuler</option>
+          <option value="latest">Urutkan: Terbaru</option>
+          <option value="rating">Urutkan: Rating</option>
+          <option value="title">Urutkan: Judul A-Z</option>
+        </select>
+      </div>
+
+      <div class="novel-grid" id="novelGrid"></div>
+    </section>
+
+    <section id="reader" class="container section-gap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Smart Reader</span>
+          <h2>Preview chapter dengan pengalaman baca nyaman</h2>
+        </div>
+      </div>
+
+      <div class="reader-layout">
+        <aside class="reader-sidebar glass">
+          <h3>Daftar chapter</h3>
+          <div id="chapterList" class="chapter-list"></div>
+        </aside>
+
+        <article class="reader-panel glass">
+          <div class="reader-top">
+            <div>
+              <span class="eyebrow small">Sedang dibaca</span>
+              <h3 id="readerTitle">Moonlit Echoes</h3>
+            </div>
+            <button class="cta-btn small" id="bookmarkBtn">Simpan Bookmark</button>
+          </div>
+
+          <h4 id="chapterTitle">Chapter 1 — Cahaya di Atas Menara Kaca</h4>
+          <div id="chapterContent" class="chapter-content"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <div class="glass footer-card">
+      <div>
+        <strong>VeloraNovel</strong>
+        <p>Template webnovel gratis untuk GitHub Pages. Mudah dimodifikasi untuk katalog novel pribadi, komunitas, atau portal baca online.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">GitHub Ready</a>
+        <a href="#">Responsive</a>
+        <a href="#">Dark Mode</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="novelModal" aria-hidden="true">
+    <div class="modal-card glass">
+      <button class="modal-close" id="closeModal">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
